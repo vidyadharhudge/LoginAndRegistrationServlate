@@ -6,40 +6,32 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<br>
 <head>
-    <center>
-    <title>Register form</title>
-
+    <%
+        String msg=(String)request.getAttribute("message");
+        if (msg==null){
+            msg="";
+        }
+    %>
+    <%=msg%>
+    <link rel="stylesheet" href="style.css">
 </head>
+</br></br>
+</br></br>
+</br></br>
 <body>
-<form method="post" action="Register">
-    <table
-            style="background-color: skyblue; margin-left: 20px; margin-left: 20px;">
-        <td><h3 style="color: red;">Registration Page !!!</h3> </td>
-        <td></td>
-        </tr>
-    <tr>
-    <td>Name: </td>
-    <td><input type="text" name="name" ></td>
-    </tr>
-        <tr>
-            <td>Password: </td>
-            <td><input type="text" name="pass" ></td>
-        </tr>
-        <tr>
-            <td>ConfirmPassword: </td>
-            <td><input type="text" name="confirmPass" ></td>
-        </tr>
-    <tr>
-        <td>Email ID: </td>
-        <td><input type="text" name="email" ></td>
-    </tr>
-    <tr>
-        <td><input type="submit" value="register" /></td>
-    </tr>
-    </table>
-</form>
+    <div class = "form">
+        <form action="Register" method="post">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="pass" placeholder="Password">
+            <input type="password"name="confirmPass" placeholder="Confirm Password">
+            <input type="submit" placeholder="submit" value="Register">
+        </form>
+        </table>
+        </form>
+    </div>
+</div>
 </center>
 </body>
-</html>

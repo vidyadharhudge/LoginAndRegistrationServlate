@@ -5,35 +5,33 @@
   Time: 4:26 AM
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<br>
 <head>
-    <center>
-    <title>Login form</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+</br></br>
+</br></br>
+</br></br>
 <body>
-<form method="post" action="LoginServlet">
-    <table
-            style="background-color: lightgreen; margin-left: 20px; margin-left: 20px;">
-
-            <td><h3 style="color: red;">Login Page !!!</h3> </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Username: </td>
-            <td><input type="text" name="username" ></td>
-        </tr>
-        <tr>
-            <td>Password: </td>
-            <td><input type="text" name="password" ></td>
-        </tr>
-        <tr>
-        <tr><td><input type="submit" value="Login"></td><td><a href="Register.jsp">Registration</a></td></tr>
-        </tr>
-    </table>
-    </table>
-</form>
-<center>
+<title> Login form </title>
+<%
+    String msg=(String)request.getAttribute("message");
+    if (msg==null){
+        msg="";
+    }
+%>
+<%=msg%>
+<div class = "form">
+    <div action="LoginServlet">
+        <form action="LoginServlet" method="post">
+            <input type="text" name="username" placeholder="UserName">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Login">
+            <a href="Register.jsp">Registration</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>

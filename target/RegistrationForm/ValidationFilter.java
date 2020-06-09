@@ -22,8 +22,10 @@ public class ValidationFilter implements Filter {
         String password=request.getParameter("password");
         if (path.contains("LoginServlet")){
             if (username!=null && username.trim().length()<6 && password!=null && password.trim().length()<8){
-                System.out.println("Invalid Username And PassWord");
-                response.sendRedirect("credentialError.jsp");
+                RequestDispatcher rd= request.getServletContext().getRequestDispatcher("/Login.jsp");
+                String message = "<h4  style=\"color:red\" align=\"center\">Either Username Or Password Is Wrong</h4>";
+                request.setAttribute("message",message);
+                rd.include(request,response);
             }
         }
         filterChain.doFilter(request,response);
