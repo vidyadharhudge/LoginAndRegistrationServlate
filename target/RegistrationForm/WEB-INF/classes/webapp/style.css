@@ -1,48 +1,48 @@
 body{
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+    background-image: linear-gradient(180deg, #b15f5f, #dedee7);
     height: 100vh;
-    background-size: cover;
+    background-size: revert;
     background-position: center;
 }
 
 .Registration{
-    width: 360px;
-    padding: 10% 0 0;
+    width: 400px;
+    padding: 15% 0 0;
     margin: auto;
     text-align: center;
 }
 
 .title{
-    width: 360px;
-    padding: 10% 0 0;
+    width: 400px;
+    padding: 15% 0 0;
     margin: auto;
-    text-align: center;//
+    text-align: center;
 }
 
 .form{
-    position: relative;
-    z-index: 1;
-    background:#ADD8E6;
+    position: center;
+    z-index: 2;
+    background: transparent;
     max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
+    margin: 0 auto 200px;
+    padding: 50px;
+    text-align: center;
+}
+
+.Login{
+    position: relative;
+    z-index: 2;
+    background:transparent;
+    max-width: 360px;
+    margin: 25px 50px 75px;
+    padding: 50px;
     text-align: center;
 }
 
 .Login{
     position: relative;
     z-index: 1;
-    background:#ADD8E6;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-}
-
-.Login{
-    position: relative;
-    z-index: 1;
-    background:#808080;
+    background: #808080;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -51,34 +51,23 @@ body{
 
 .form input{
     front-family:"Roboto",sans-serif;
-    background-color: #FFFFFF;
+    background-color: rgba(252, 253, 253, 0.99);
     width:100%;
-    border:0;
+    border:1px solid #0e0e13;
     margin: 0 0 15px;
     padding: 15px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     front-size:14px;
 }
 
 .form password{
     front-family:"Roboto",sans-serif;
-    background-color: #FFFFFF;
+    background-color: rgba(246, 252, 252, 0.99);
     width:100%;
     border:0;
     margin: 0 0 15px;
     padding: 15px;
-    box-sizing: border-box;
-    front-size:14px;
-}
-
-form date{
-    front-family:"Roboto",sans-serif;
-    background-color: #FFFFFF;
-    width:100%;
-    border:0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     front-size:14px;
 }
 
@@ -86,11 +75,11 @@ form date{
     front-family:"Roboto",sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background-color: #FFFFFF;
+    background-color: rgba(246, 252, 252, 0.99);
     width:100%;
     border:0;
     padding: 15px;
-    color:#ffffff;
+    color: #1c0202;
     front-size:14px;
     cursor:pointer;
 }
@@ -99,7 +88,7 @@ form button{
     front-family:"Roboto",sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background-color: #FFFFFF;
+    background-color: rgba(38, 97, 97, 0.99);
     width:100%;
     border:0;
     padding: 15px;
@@ -109,7 +98,7 @@ form button{
 }
 
 .form button:hover,.form button:active{
-    background-color: #ADD8E6;
+    background-color: #f1f8f3;
 }
 
 .form .message{
@@ -119,7 +108,7 @@ form button{
 }
 
 .form .message a{
-    color: #ADD8E6;
+    color: #f5f9fa;
     text-decoration:none;
 }
 

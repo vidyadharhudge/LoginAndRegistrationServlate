@@ -11,7 +11,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.regex.Pattern;
-
 import static java.lang.String.valueOf;
 
 @WebServlet("/Register")
@@ -25,13 +24,13 @@ public class Register extends HttpServlet {
         String pass = request.getParameter("pass");
         String confirmPass = request.getParameter("confirmPass");
 
-        Pattern pattern1 = null;
-        Pattern pattern2 = null;
-        Pattern pattern3 = null;
-        pattern1 = pattern1.compile("[A-Z][A-Z a-z]{3,}");
-        pattern2 = pattern2.compile("[0-9]{4,}");
-        pattern3= pattern3.compile("^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$");
-        if ((pattern1.matches(valueOf(pattern1), name)) && (pattern2.matches(valueOf(pattern2), pass)) && pass.equals(confirmPass) && (pattern3.matches(valueOf(pattern3), email))) {
+        Pattern namePattern = null;
+        Pattern passwordPattern = null;
+        Pattern emailPattern = null;
+        namePattern = namePattern.compile("[A-Z][A-Z a-z]{3,}");
+        passwordPattern = passwordPattern.compile("[0-9]{4,}");
+        emailPattern= emailPattern.compile("^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$");
+        if ((namePattern.matches(valueOf(namePattern), name)) && (passwordPattern.matches(valueOf(passwordPattern), pass)) && pass.equals(confirmPass) && (emailPattern.matches(valueOf(emailPattern), email))) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection
@@ -40,7 +39,7 @@ public class Register extends HttpServlet {
                         ("insert into register (username,password,email)values(\'" + name + "\',\'" + pass + "\',\'" + email + "\')");
                 int i = ps.executeUpdate();
                 if (i > 0) {
-                    RequestDispatcher rd=getServletContext().getRequestDispatcher("/Register.jsp");
+                    RequestDispatcher rd=getServletContext().getRequestDispatcher("/Login.jsp");
                     String message = "<h4  style=\"color:red\" align=\"center\">Registration Is Successful</h4>";
                     request.setAttribute("message",message);
                     rd.include(request,response);

@@ -14,11 +14,11 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String un = request.getParameter("username");
         String pw = request.getParameter("password");
-        Pattern pattern1=null;
-        Pattern pattern2=null;
-        pattern1=pattern1.compile("[A-Z][A-Z a-z]{3,}");
-        pattern2=pattern2.compile("[0-9]{4,}");
-        if ((pattern1.matches(valueOf(pattern1),un))&&(pattern2.matches(valueOf(pattern2),pw))){
+        Pattern namePattern=null;
+        Pattern passwordPattern=null;
+        namePattern=namePattern.compile("[A-Z][A-Z a-z]{3,}");
+        passwordPattern=passwordPattern.compile("[0-9]{4,}");
+        if ((namePattern.matches(valueOf(namePattern),un))&&(passwordPattern.matches(valueOf(passwordPattern),pw))){
             request.getRequestDispatcher("Welcome.jsp").forward(request,response);
         }
         else {
